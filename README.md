@@ -28,9 +28,9 @@ with the best editor:
 
 ```bash
 vim ~/.profile
-´´´
+```
 
-with the lines
+with the lines, to set your JAVA_PATH correctally.
 
 ```bash
 JAVA_HOME='/opt/jdk-13.0.1'
@@ -40,8 +40,7 @@ export PATH
 M2_HOME='/opt/apache-maven-3.6.3'
 PATH="$M2_HOME/bin:$PATH"
 export PATH
-
-´´´
+```
 
 ## How to run
 
