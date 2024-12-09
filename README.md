@@ -20,10 +20,32 @@ Folder **src/resources/** contains config files for **shopping-cart** Spring Boo
 
 * **src/resources/application.properties** - main configuration file. Here it is possible to change admin username/password,
 as well as change the port number.
+ 
+## Install maven and jdk (on Ubuntu)
+
+modivy your .profile file 
+with the best editor:
+
+```bash
+vim ~/.profile
+´´´
+
+with the lines
+
+```bash
+JAVA_HOME='/opt/jdk-13.0.1'
+PATH="$JAVA_HOME/bin:$PATH"
+export PATH
+
+M2_HOME='/opt/apache-maven-3.6.3'
+PATH="$M2_HOME/bin:$PATH"
+export PATH
+
+´´´
 
 ## How to run
 
-There are several ways to run the application. You can run it from the command line with included Maven Wrapper, Maven or Docker. 
+There are several ways to run the application (see below). You can run it from the command line with included Maven Wrapper, Maven or Docker. 
 
 Once the app starts, go to the web browser and visit `http://localhost:8070/home`
 
@@ -107,8 +129,9 @@ It is possible to run **shopping-cart** using Docker:
 
 Build Docker image:
 ```bash
-$ mvn clean package
-$ docker build -t shopping-cart:dev -f docker/Dockerfile .
+  324  mvn install -DskipTests
+  325  sudo docker build -t shopping-cart:dev -f docker/Dockerfile .
+  326  sudo docker run --rm -i -p 8070:8070       --name shopping-cart       shopping-cart:dev
 ```
 
 Run Docker container:

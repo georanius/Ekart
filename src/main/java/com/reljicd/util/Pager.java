@@ -5,7 +5,7 @@ import com.reljicd.model.Product;
 import org.springframework.data.domain.Page;
 
 /**
- * @author Dusan Raljic
+ * @author georanius
  */
 public class Pager {
 
